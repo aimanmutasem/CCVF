@@ -43,7 +43,7 @@ chmod +x scripts/*.sh
 
 ## 3. Generate 2nd-Best Candidates
 
-Run this before serving the model:
+Run this before serving the model (**first time only or use the uploaded dataset**):
 
 ```bash
 python scripts/2nd_best_candidate.py 

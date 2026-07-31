@@ -20,7 +20,7 @@ cd project_directory
 Create the vLLM 0.19.1 virtual environment (**first time only**):
 
 ```bash
-/.../.conda/envs/qwnccr/bin/python -m venv .venv_vllm0191_py310
+/.../.conda/envs/ccvf/bin/python -m venv .venv_vllm0191_py310
 .venv_vllm0191_py310/bin/pip install vllm==0.19.1 \
   --extra-index-url https://download.pytorch.org/whl/cu128
 ```

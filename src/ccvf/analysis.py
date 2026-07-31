@@ -401,7 +401,7 @@ def compute_metrics_and_stats(
         ),
         "SF_WCAR": sf_wcar,
         "SFPR_abs": None if wcar is None or sf_wcar is None else wcar - sf_wcar,
-        "SFPR_rel": None if not wcar else (wcar - sf_wcar) / wcar,
+        "SFPR_rel": None if not wcar or sf_wcar is None else (wcar - sf_wcar) / wcar
         "CCAR": ccar,
         "NotSureRate_W": _rate(w_ns, n),
         "NotSureRate_SF": _rate(sf_ns, n),

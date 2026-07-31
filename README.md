@@ -56,7 +56,7 @@ python scripts/2nd_best_candidate.py
 Open a **tmux** session and run:
 
 ```bash
-scripts/serve_model_vllm0191.sh --config configs/qwen3_8b.yaml --port 8000 --tp 2
+scripts/serve_model_vllm0191.sh --config configs/qwen3_8b.yaml --port 8000
 ```
 
 Wait until the terminal prints `Application startup complete` before moving on.

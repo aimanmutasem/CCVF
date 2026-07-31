@@ -46,8 +46,7 @@ chmod +x scripts/*.sh
 Run this before serving the model (**first time only or use the uploaded dataset**):
 
 ```bash
-python scripts/2nd_best_candidate.py 
-    python scripts/2nd_best_candidate.py \
+python scripts/2nd_best_candidate.py \
         --input  data/unified_pass_warn_eval.jsonl \
         --output data/ccvf_data.jsonl \
         --model  Models/Qwen3.6-27B \

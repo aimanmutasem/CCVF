@@ -14,7 +14,7 @@ inference:
   top_p: 1.0
   max_output_tokens: 512
   timeout_seconds: 300
-  concurrency: 2
+  concurrency: 16
   retries: 2
   retry_backoff_seconds: 2.0
 models:
@@ -25,7 +25,7 @@ models:
   api_key_env: LOCAL_OPENAI_API_KEY
   response_format: none
   max_tokens_param: max_tokens
-  max_workers: 2
+  max_workers: 16
   extra_body:
     chat_template_kwargs:
       enable_thinking: false
@@ -34,4 +34,4 @@ serve:
   gpu_memory_utilization: 0.75
   max_model_len: 4096
   generation_config: vllm
-  max_num_seqs: 8
+  max_num_seqs: 16

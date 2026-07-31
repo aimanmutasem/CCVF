@@ -13,14 +13,14 @@ Load cluster modules and activate the base conda environment:
 source /etc/profile.d/modules.sh 2>/dev/null || true
 module load shared cuda12.4/toolkit/12.4.0 anaconda3/anaconda3
 source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate qwnccr
-cd /u/erdos/csga2/aalfatemi/LLM_MSGCNET/NSMA/code
+conda activate ccvf
+cd project_directory
 ```
 
 Create the vLLM 0.19.1 virtual environment (**first time only**):
 
 ```bash
-/u/erdos/csga2/aalfatemi/.conda/envs/qwnccr/bin/python -m venv .venv_vllm0191_py310
+/.../.conda/envs/qwnccr/bin/python -m venv .venv_vllm0191_py310
 .venv_vllm0191_py310/bin/pip install vllm==0.19.1 \
   --extra-index-url https://download.pytorch.org/whl/cu128
 ```
@@ -46,7 +46,7 @@ chmod +x scripts/*.sh
 Run this before serving the model:
 
 ```bash
-python scripts/2nd_best_candidate.py --config configs/qwen3_8b.yaml
+python scripts/2nd_best_candidate.py 
 ```
 
 ---

@@ -1,0 +1,11 @@
+pip install tqdm
+pip install pyyaml pyarabic
+pip install pyarabic
+pip install gdown
+pip install pandas
+pip install matplotlib
+torchtext==0.15.2
+
+python scripts/generate_edse.py --config configs/configs.yml 
+
+Successfully installed torch-2.0.1 torchaudio-2.0.2 torchtext-0.15.2 torchvision-0.15.2 triton-2.0.0

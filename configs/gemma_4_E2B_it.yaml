@@ -1,0 +1,36 @@
+run:
+  run_id: gemma_4_E2B_it
+  output_dir: results/runs
+  overwrite: false
+  resume: true
+  seed: 13
+dataset:
+  path: data/ccvf_data.jsonl
+  allow_non_json_lines: false
+  limit: null
+prompt_dir: prompts
+inference:
+  temperature: 0.0
+  top_p: 1.0
+  max_output_tokens: 512
+  timeout_seconds: 300
+  concurrency: 16
+  retries: 2
+  retry_backoff_seconds: 2.0
+  do_thinking: false
+  thinking_budget: 0
+models:
+- id: gemma-4-E2B-it
+  provider: local_openai
+  model: Models/gemma-4-E2B-it
+  base_url: http://127.0.0.1:8002/v1
+  api_key_env: LOCAL_OPENAI_API_KEY
+  response_format: none
+  api_endpoint: completions
+  prompt_wrapper: gemma4
+  max_tokens_param: max_tokens
+  max_workers: 16
+
+serve:
+  dtype: float32
+

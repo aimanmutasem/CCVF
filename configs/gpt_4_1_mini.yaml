@@ -1,0 +1,27 @@
+run:
+  run_id: gpt_4_1_mini
+  output_dir: results/runs
+  overwrite: false
+  resume: true
+  seed: 13
+dataset:
+  path: data/ccvf_data.jsonl
+  allow_non_json_lines: false
+  limit: null
+prompt_dir: prompts
+inference:
+  temperature: 0.0
+  top_p: 1.0
+  max_output_tokens: 512
+  timeout_seconds: 300
+  concurrency: 8
+  retries: 4
+  retry_backoff_seconds: 2.0
+models:
+  - id: GPT-4.1-mini
+    provider: openai
+    model: gpt-4.1-mini
+    api_key_env: OPENAI_API_KEY
+    response_format: json_object
+    max_tokens_param: max_tokens
+    max_workers: 8

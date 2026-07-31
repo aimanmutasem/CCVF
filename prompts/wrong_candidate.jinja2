@@ -1,0 +1,27 @@
+You are answering a multiple-choice reasoning question and verifying a proposed candidate answer.
+
+Context:
+{{ context }}
+
+Question:
+{{ question }}
+
+Options:
+{% for answer in answers -%}
+{{ loop.index0 }}: {{ answer }}
+{% endfor %}
+
+Candidate answer: Option {{ candidate_index }}: {{ answers[candidate_index] }}
+
+Independently solve the question, then decide whether the candidate should be Accepted, Rejected, or marked Not Sure.
+
+Return one compact JSON object only. No markdown, no prose outside JSON, no <think> tags.
+{
+  "sample_id": "{{ sample_id }}",
+  "condition": "W",
+  "candidate_index": {{ candidate_index }},
+  "selected_answer_index": <0-based integer>,
+  "verification_decision": "<Accept|Reject|Not Sure>",
+  "confidence": <number 0-100>
+}
+

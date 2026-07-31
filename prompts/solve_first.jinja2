@@ -1,0 +1,32 @@
+You are answering a multiple-choice reasoning question and verifying a proposed candidate answer.
+
+Context:
+{{ context }}
+
+Question:
+{{ question }}
+
+Options:
+{% for answer in answers -%}
+{{ loop.index0 }}: {{ answer }}
+{% endfor %}
+
+Your committed independent answer before seeing the candidate was Option {{ committed_answer_index }}: {{ answers[committed_answer_index] }}
+
+Candidate answer: Option {{ candidate_index }}: {{ answers[candidate_index] }}
+
+Decide whether the presented candidate should be Accepted, Rejected, or marked Not Sure.
+
+verification_decision refers specifically to whether the presented candidate is correct.
+
+For selected_answer_index, report the option you now believe is the correct answer to the original question after considering the candidate. It may be the same as or different from committed_answer_index.
+
+Return one compact JSON object only. No markdown, no prose outside JSON, no <think> tags.
+{
+  "sample_id": "{{ sample_id }}",
+  "condition": "SF",
+  "candidate_index": {{ candidate_index }},
+  "selected_answer_index": <0-based integer>,
+  "verification_decision": "<Accept|Reject|Not Sure>",
+  "confidence": <number 0-100>
+}

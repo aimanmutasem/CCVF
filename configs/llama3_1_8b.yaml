@@ -1,0 +1,37 @@
+run:
+  run_id: llama3_1_8b
+  output_dir: results/runs
+  overwrite: false
+  resume: true
+  seed: 13
+dataset:
+  path: data/ccvf_data.jsonl
+  allow_non_json_lines: false
+  limit: null
+prompt_dir: prompts
+inference:
+  temperature: 0.0
+  top_p: 1.0
+  max_output_tokens: 512
+  timeout_seconds: 300
+  concurrency: 16
+  retries: 2
+  retry_backoff_seconds: 2.0
+models:
+  - id: Llama-3.1-8B-Instruct
+    provider: local_openai
+    model: Models/Llama-3.1-8B-Instruct
+    base_url: http://127.0.0.1:8003/v1
+    api_key_env: LOCAL_OPENAI_API_KEY
+    response_format: none
+    max_tokens_param: max_tokens
+    max_workers: 16
+    extra_body:
+      chat_template_kwargs:
+        enable_thinking: false
+serve:
+  dtype: half
+  gpu_memory_utilization: 0.75
+  max_model_len: 4096
+  generation_config: vllm
+  max_num_seqs: 16

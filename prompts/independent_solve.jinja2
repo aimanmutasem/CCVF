@@ -1,0 +1,23 @@
+You are answering a multiple-choice reasoning question. Choose the single best answer.
+
+Context:
+{{ context }}
+
+Question:
+{{ question }}
+
+Options:
+{% for answer in answers -%}
+{{ loop.index0 }}: {{ answer }}
+{% endfor %}
+
+Return one compact JSON object only. No markdown, no prose outside JSON, no <think> tags.
+{
+  "sample_id": "{{ sample_id }}",
+  "condition": "N",
+  "candidate_index": null,
+  "selected_answer_index": <0-based integer>,
+  "verification_decision": "NA",
+  "confidence": <number 0-100>
+}
+

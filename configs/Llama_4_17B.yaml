@@ -1,0 +1,37 @@
+run:
+  run_id: Llama_4_17B
+  output_dir: results/runs
+  overwrite: false
+  resume: true
+  seed: 13
+dataset:
+  path: data/ccvf_data.jsonl
+  allow_non_json_lines: false
+  limit: null
+prompt_dir: prompts
+inference:
+  temperature: 0.0
+  top_p: 1.0
+  max_output_tokens: 512
+  timeout_seconds: 300
+  concurrency: 2
+  retries: 2
+  retry_backoff_seconds: 2.0
+models:
+- id: Llama-4-Scout-17B-16E-Instruct
+  provider: local_openai
+  model: Models/Llama-4-Scout-17B-16E-Instruct
+  base_url: http://127.0.0.1:8001/v1
+  api_key_env: LOCAL_OPENAI_API_KEY
+  response_format: none
+  max_tokens_param: max_tokens
+  max_workers: 2
+  extra_body:
+    chat_template_kwargs:
+      enable_thinking: false
+serve:
+  dtype: half
+  gpu_memory_utilization: 0.75
+  max_model_len: 4096
+  generation_config: vllm
+  max_num_seqs: 8

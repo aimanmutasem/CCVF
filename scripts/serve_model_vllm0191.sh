@@ -27,7 +27,7 @@ mkdir -p "$XDG_CACHE_HOME" "$HF_HOME" "$HUGGINGFACE_HUB_CACHE" \
 
 if [[ ! -x "$VENV/bin/python" ]]; then
   echo "Missing $VENV/bin/python" >&2
-  echo "Create it with: /u/erdos/csga2/aalfatemi/.conda/envs/qwnccr/bin/python -m venv .venv_vllm0191_py310 && .venv_vllm0191_py310/bin/pip install vllm==0.19.1 --extra-index-url https://download.pytorch.org/whl/cu128" >&2
+  echo "Create it with: /bin/python -m venv .venv_vllm0191_py310 && .venv_vllm0191_py310/bin/pip install vllm==0.19.1 --extra-index-url https://download.pytorch.org/whl/cu128" >&2
   exit 1
 fi
 if [[ ! -x "$VENV/bin/vllm" ]]; then

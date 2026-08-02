@@ -13,8 +13,8 @@ from pathlib import Path
 import yaml
 
 DEFAULT_TRANSFORMERS_OVERLAYS = [
-    Path("/u/erdos/csga2/aalfatemi/LLM_MSGCNET/NSMA/caver/.deps/transformers513"),
-    Path("/u/erdos/csga2/aalfatemi/LLM_MSGCNET/NSMA/caver/.deps/transformers513_min"),
+    Path("/transformers513"),
+    Path("/transformers513_min"),
 ]
 KNOWN_UNSUPPORTED_VLLM085_ARCHITECTURES = {
     "Gemma4ForConditionalGeneration",
